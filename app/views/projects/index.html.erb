@@ -1,5 +1,5 @@
 <div class="row align-center">
-  <div class="medium-6 columns">
+  <div class="medium-10 columns">
     <header>
       <h4 class="text-center">Filter</h4>
     </header>
@@ -7,7 +7,7 @@
 </div>
 
 <div class="row align-center">
-  <div class="medium-6 columns">
+  <div class="medium-10 columns">
     <%= form_for :projects, method: :get do |f| %>
     <div class="input-group">
       <%= label_tag :keywords, nil, class: "input-group-label" %>
@@ -22,28 +22,20 @@
 
 <div class="row align-center">
   <div class="medium-10 columns">
-    <table class="stack hover">
-      <thead>
-        <tr>
-          <th>Project Name</th>
-          <th>Description</th>
-          <th>Technologies</th>
-          <th>URL</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @projects.each do |project| %>
-          <tr>
-            <td><%= project.name.upcase %></td>
-            <td><%= project.description.capitalize %></td>
-            <td><%= project.technologies.capitalize %></td>
-            <td><a><%= project.url %></a></td>
-          </tr>
-        <% end %>
-      </tbody>
+    <header>
+      <h5>Results</h5>
+    </header>
+    <%= render partial: "pager", locals: { keywords: @keywords, page: @page } %>
+    <% @projects.each do |project| %>
+    <div class="callout clearfix">
+      <p><%= project.name.upcase %></p>
+      <p><%= project.description.capitalize %></p>
+      <p><%= project.technologies.capitalize %></p>
+      <p><%= project.url %></h4>
+      <a class="button float-right" href="#">Deets</a>
+      </div>
+      <% end %>
 
-    </table>
 
-  </div>
-
-</div>
+      </div>
+    </div>

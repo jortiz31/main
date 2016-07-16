@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   def index
+    @page = (params[:page] || 0).to_i
     if params[:keywords].present?
       @keywords = params[:keywords]
       project_search_term = ProjectSearchTerm.new(@keywords)

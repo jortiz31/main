@@ -1,0 +1,8 @@
+<ul class="pagination text-center" role="navigation" aria-label="Pagination">
+  <li class="pagination-previous <%= page == 0 ? 'disabled' : '' %> ">
+    <%= link_to_if page > 0, "previous".html_safe, projects_path(keywords: keywords, page: page - 1) %>
+  </li>
+  <li class="pagination-next">
+    <%= link_to "Next".html_safe, projects_path(keywords: keywords, page: page + 1) %>
+  </li>
+</ul>
