@@ -1,0 +1,49 @@
+<div class="row align-center">
+  <div class="medium-6 columns">
+    <header>
+      <h4 class="text-center">Filter</h4>
+    </header>
+  </div>
+</div>
+
+<div class="row align-center">
+  <div class="medium-6 columns">
+    <%= form_for :projects, method: :get do |f| %>
+    <div class="input-group">
+      <%= label_tag :keywords, nil, class: "input-group-label" %>
+      <%= text_field_tag :keywords, nil, placeholder: "ex: React..", class: "input-group-field" %>
+      <div class="input-group-button">
+        <%= submit_tag "Search", class:"button" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row align-center">
+  <div class="medium-10 columns">
+    <table class="stack hover">
+      <thead>
+        <tr>
+          <th>Project Name</th>
+          <th>Description</th>
+          <th>Technologies</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @projects.each do |project| %>
+          <tr>
+            <td><%= project.name.upcase %></td>
+            <td><%= project.description.capitalize %></td>
+            <td><%= project.technologies.capitalize %></td>
+            <td><a><%= project.url %></a></td>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
