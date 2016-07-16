@@ -11,5 +11,10 @@ class ProjectsController < ApplicationController
     else
       @projects = []
     end
+
+    respond_to do|format|
+      format.html {}
+      format.json {render json: @projects}
+    end
   end
 end

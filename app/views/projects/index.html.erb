@@ -1,41 +1,47 @@
-<div class="row align-center">
-  <div class="medium-10 columns">
-    <header>
-      <h4 class="text-center">Filter</h4>
-    </header>
-  </div>
-</div>
+<article ng-app="projects" ng-controller="ProjectSearchController">
 
-<div class="row align-center">
-  <div class="medium-10 columns">
-    <%= form_for :projects, method: :get do |f| %>
-    <div class="input-group">
-      <%= label_tag :keywords, nil, class: "input-group-label" %>
-      <%= text_field_tag :keywords, nil, placeholder: "ex: React..", class: "input-group-field" %>
-      <div class="input-group-button">
-        <%= submit_tag "Search", class:"button" %>
+  <div class="row align-center">
+    <div class="medium-10 columns">
+      <header>
+        <h4 class="text-center">Filter</h4>
+      </header>
+    </div>
+  </div>
+
+  <div class="row align-center">
+    <div class="medium-10 columns">
+      <form>
+        <div class="input-group">
+          <label for="keywords" class="input-group-label">keywords</label>
+          <input type="text"
+          name="keywords"
+          class="input-group-field"
+          placeholder="React, Rails, etc.."
+          ng-model="keywords">
+          <div class="input-group-button">
+            <button class="button" ng-click="search(keywords)">Search</button>
+          </div>
+        </div>
+      </form>
+      <h1 class="searchedFor" ng-if="searchedFor">
+        <small>Searched For: </small> {{searchedFor}}
+      </h1>
+    </div>
+  </div>
+
+
+
+  <div class="row align-center">
+    <div class="medium-10 columns">
+      <header>
+        <h5>Results</h5>
+      </header>
+      <%= render partial: "pager", locals: { keywords: @keywords, page: @page } %>
+      <div ng-repeat="project in projects">
+        {{project.name}}
+
       </div>
     </div>
-    <% end %>
   </div>
-</div>
 
-<div class="row align-center">
-  <div class="medium-10 columns">
-    <header>
-      <h5>Results</h5>
-    </header>
-    <%= render partial: "pager", locals: { keywords: @keywords, page: @page } %>
-    <% @projects.each do |project| %>
-    <div class="callout clearfix">
-      <p><%= project.name.upcase %></p>
-      <p><%= project.description.capitalize %></p>
-      <p><%= project.technologies.capitalize %></p>
-      <p><%= project.url %></h4>
-      <a class="button float-right" href="#">Deets</a>
-      </div>
-      <% end %>
-
-
-      </div>
-    </div>
+</article>
