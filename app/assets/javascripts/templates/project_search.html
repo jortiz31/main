@@ -1,0 +1,54 @@
+<div ng-controller="ProjectSearchController">
+
+  <div class="row align-center">
+    <div class="medium-10 columns">
+      <header>
+        <h4 class="text-center">Filter</h4>
+      </header>
+    </div>
+  </div>
+
+  <div class="row align-center">
+    <div class="medium-10 columns">
+      <form>
+        <div class="input-group">
+          <label for="keywords" class="input-group-label">keywords</label>
+          <input  type="text"
+          name="keywords"
+          class="input-group-field"
+          placeholder="React, Rails, etc.."
+          ng-change="search(keywords)"
+          ng-model="keywords">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row align-center" ng-if="projects.length > 0">
+    <div class="medium-10 columns">
+      <ul class="pagination text-center" role="navigation" aria-label="Pagination">
+        <li class="pagination-previous <%= page == 0 ? 'disabled' : '' %> ">
+          <a href="" ng-click="previousPage()">Previous</a>
+        </li>
+        <li class="pagination-next">
+          <a href="" ng-click="nextPage()">Next</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row align-center">
+    <div class="medium-5 columns">
+      <div ng-repeat="project in projects">
+        <ul class="pricing-table no-bullet text-center">
+          <li class="title">{{project.name}}</li>
+          <li class="description">{{project.description}}</li>
+          <li class="technologies">{{project.technologies}}</li>
+          <li>{{project.url}}</li>
+          <li><a class="button" href="#">Details</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
