@@ -69,6 +69,7 @@ $global-weight-bold: bold;
 $global-radius: 0;
 $global-text-direction: ltr;
 $default-border: #ECF0F1;
+$top-menu: #7f8c8d;
 
 // 2. Breakpoints
 // --------------
@@ -519,7 +520,7 @@ $thumbnail-radius: $global-radius;
 // 33. Title Bar
 // -------------
 
-$titlebar-background: #4CD4B0;
+$titlebar-background: $top-menu;
 $titlebar-color: $white;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
@@ -545,6 +546,6 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: #4CD4B0;
+$topbar-background: $top-menu;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;
