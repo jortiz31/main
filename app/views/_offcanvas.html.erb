@@ -1,0 +1,45 @@
+<div class="off-canvas-wrapper" ng-controller="SiteController">
+  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+    <!-- off-canvas title bar for 'small' screen -->
+    <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
+      <div class="title-bar-right">
+        <span class="menu-title">jonathanOrtiz</span>
+        <button class="menu-icon" type="button" data-open="offCanvasRight"></button>
+      </div>
+    </div>
+
+    <!-- off-canvas right menu -->
+    <div class="off-canvas position-right" id="offCanvasRight" data-off-canvas data-position="right">
+      <ul class="vertical dropdown menu" data-dropdown-menu>
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/about">About</a></li>
+        <li><a href="#/portfolio">Work</a></li>
+        <li><a href="#/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- "wider" top-bar menu for 'medium' and up -->
+    <div id="widemenu" class="top-bar">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text">jonathan&#95;ortiz</li>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu submenu" data-submenu>
+          <li><a href="#/" class="menu-anchor">Home</a></li>
+          <li><a href="#/about" class="menu-anchor">About</a></li>
+          <li><a href="#/portfolio" class="menu-anchor">Work</a></li>
+          <li><a href="#/contact" class="menu-anchor">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- original content goes in this container -->
+    <div class="off-canvas-content" data-off-canvas-content>
+      <%= yield %>
+    </div>
+
+    <!-- close wrapper, no more content after this -->
+  </div>
+</div>

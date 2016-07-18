@@ -4,11 +4,9 @@ app.config(["$routeProvider",
   function($routeProvider) {
     $routeProvider.when("/", {
       contoller: "ProjectSearchController",
-      controllerAs: "ProjectSearchCtrl",
       templateUrl: "project_search.html"
     }).when("/:id", {
       controller: "ProjectDetailController",
-      controllerAs: "ProjectDetailCtrl",
       templateUrl: "project_detail.html"
     });
   }
@@ -53,5 +51,22 @@ app.controller("ProjectSearchController", [
       $scope.viewDetails = function(project) {
         $location.path("/" + project.id);
       }
+  }
+]);
+
+app.controller("ProjectDetailController", [
+          "$scope", "$http", "$routeParams",
+    function($scope,$http,$routeParams) {
+      var projectId = $routeParams.id;
+      $scope.project = {};
+
+      $http.get(
+        "/projects/" + projectId + ".json"
+      ).then(function(response) {
+          $scope.project = response.data;
+        },function(response) {
+          console.log("error: " + response.data);
+        }
+    );
   }
 ]);

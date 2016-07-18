@@ -3,8 +3,14 @@
  *= require foundation
  *= require_tree .
  *= require_self
-//= require foundation_and_overrides
+ *= require foundation_and_overrides
 
 
  */
 @import "foundation_and_overrides";
+
+$menu-text: #fff;
+
+.menu-anchor {
+  color: $menu-text;
+}

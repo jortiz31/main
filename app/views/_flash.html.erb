@@ -1,0 +1,20 @@
+<div class="row align-center">
+  <div class="medium-6 columns">
+    <% if notice.present? %>
+    <div class="success callout" data-closable>
+      <p> <%= notice %> </p>
+      <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+      <% end %>
+    <% if alert.present? %>
+    <div class="alert callout" data-closable>
+      <p> <%= alert %> </p>
+      <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <% end %>
+  </div>
+</div>

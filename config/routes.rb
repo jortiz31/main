@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'home#index'
-  get 'angular_test', to: 'angular_test#index'
-  resources :projects, only: [:index]
+
+  root  'site#angular'
+  get '*path', to: 'site#angular'
+  resources :projects, only: [:index, :show]
 end
