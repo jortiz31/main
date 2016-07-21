@@ -33,7 +33,6 @@ $midnight-blue: #34495e;
   height: 93vh;
 }
 
-
 // FOOTER STYLE
 .sticky-footer {
   border-top: 1px solid $light-gray;
@@ -43,13 +42,23 @@ $midnight-blue: #34495e;
   bottom: 0;
   min-width: 100%;
   max-height: 10vh;
+  background-color: $white;
 }
 
 .footer-icon {
-  margin-left: 47%;
-  padding-top: -45px;
   color: $midnight-blue;
   font-size: 1.8em;
+}
+.footer-menu {
+  margin: 0;
+  padding-right: 0;
+  li {
+  display: inline-block;
+  min-width: 30%;
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  }
 }
 
 // OFF CANVAS VERTICAL MENU
@@ -63,6 +72,7 @@ $midnight-blue: #34495e;
     min-height: 20vh;
     font-size: 3em;
     text-align: center;
+    padding: 45px 0 0 0;
   }
   li:hover {
     background-color: $asbestos;
@@ -116,11 +126,6 @@ $midnight-blue: #34495e;
   .sticky-footer {
     padding: 8px;
   }
-  .footer-icon {
-    margin-left: 47%;
-    padding-top: -40px;
-    font-size: 1.8em;
-  }
 
   .title-bar {
     position: relative;
@@ -132,15 +137,40 @@ $midnight-blue: #34495e;
 // SMALL SCREEN MEDIA QUERY FOR TOPBAR AND FOOTER
 @media(max-width: 639px){
   .off-canvas-content {
-    min-height: 80vh;
+    height: 93.4vh;
   }
-  .footer-icon {
-    font-size: 1.6em;
-  }
-
   .title-bar {
     height: 50px;
-    padding-top: -5px;
+  }
+  .top-bar {
+    padding-top: 8px;
   }
 
+}
+
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (orientation : landscape) {
+  .off-canvas-content {
+    min-height: 100vh;
+  }
+  .footer-icon {
+    font-size: 1.3em;
+  }
+}
+
+@media only screen
+and (min-device-width : 568px)
+and (max-device-width : 320px)
+and (orientation : landscape) {
+  .off-canvas-content {
+    height: 100vh;
+  }
+  .footer-icon {
+    font-size: 1.1em;
+  }
+  .top-bar {
+    padding-bottom: 10px;
+  }
 }
