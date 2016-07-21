@@ -26,6 +26,8 @@
  // GLOBALS
 $main-bg-image: linear-gradient(rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.61)), url(images/mainbg.jpg);
 $menu-color: #0EBB9F;
+$asbestos: #7f8c8d;
+$midnight-blue: #34495e;
 
 .off-canvas-content {
   height: 93vh;
@@ -40,27 +42,34 @@ $menu-color: #0EBB9F;
   left: 0;
   bottom: 0;
   min-width: 100%;
-  max-height: 70px;
+  max-height: 10vh;
 }
 
 .footer-icon {
   margin-left: 47%;
   padding-top: -45px;
-  color: $white;
+  color: $midnight-blue;
   font-size: 1.8em;
 }
 
 // OFF CANVAS VERTICAL MENU
+.is-open {
+  min-height: 100vh;
+}
 .vert-menu {
-  height: 100vh;
-  background-color: white;
-
-
   li a {
-    color: black;
+    display: block;
+    color: $top-menu;
+    min-height: 20vh;
+    font-size: 3em;
+    text-align: center;
   }
-
-
+  li:hover {
+    background-color: $asbestos;
+  }
+  li a:hover {
+    color: $white;
+  }
 }
 
 
@@ -88,6 +97,7 @@ $menu-color: #0EBB9F;
 
 .icon-lg {
   font-size: 1.4em;
+  color: $midnight-blue;
 }
 
 #burger {
@@ -104,18 +114,11 @@ $menu-color: #0EBB9F;
     min-height: 80vh;
   }
   .sticky-footer {
-    border-top: 1px solid $light-gray;
-    position: absolute;
     padding: 8px;
-    left: 0;
-    bottom: 0;
-    min-width: 100%;
-    max-height: 70px;
   }
   .footer-icon {
     margin-left: 47%;
     padding-top: -40px;
-    color: $white;
     font-size: 1.8em;
   }
 
@@ -131,17 +134,7 @@ $menu-color: #0EBB9F;
   .off-canvas-content {
     min-height: 80vh;
   }
-  .sticky-footer {
-    border-top: 1px solid $light-gray;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    min-width: 100%;
-  }
   .footer-icon {
-    margin-left: 47%;
-    padding-top: -40px;
-    color: $white;
     font-size: 1.6em;
   }
 

@@ -1,4 +1,8 @@
 class ProjectsController < ApplicationController
+
+  def home
+  end
+
   PAGE_SIZE = 10
   def index
     @projects = Project.all.limit(10)
