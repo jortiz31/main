@@ -7,8 +7,10 @@
  *= require foundation_and_overrides
 
 
+
  */
 @import "foundation_and_overrides";
+
 @font-face {
    font-family: "foundation-icons";
    src:url("fonts/foundation-icons.eot");
@@ -20,23 +22,132 @@
    font-style: normal;
  }
 
+
  // GLOBALS
 $main-bg-image: linear-gradient(rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.61)), url(images/mainbg.jpg);
-$menu-white: #fff;
+$menu-color: #0EBB9F;
+
+.off-canvas-content {
+  height: 93vh;
+}
+
+
+// FOOTER STYLE
+.sticky-footer {
+  border-top: 1px solid $light-gray;
+  position: absolute;
+  padding: 10px;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  max-height: 70px;
+}
+
+.footer-icon {
+  margin-left: 47%;
+  padding-top: -45px;
+  color: $white;
+  font-size: 1.8em;
+}
+
+// OFF CANVAS VERTICAL MENU
+.vert-menu {
+  height: 100vh;
+  background-color: white;
+
+
+  li a {
+    color: black;
+  }
+
+
+}
+
+
+// MENU STYLES //
+.brand-text {
+  font-family: $brand-font-family;
+  position: absolute;
+  left: 0;
+  padding: 5px 0 0 7px;
+}
 
 .menu-text {
-  color: $menu-white;
+  color: $light-gray;
   font-size: 1.2em;
   padding-bottom: 3px;
 }
 
-.main-bg {
-  background-image: $main-bg-image;
-  background-position: center;
-  background-size: cover;
-  height: 50vh;
+.menu-text::after {
+  color: #C43829;
 }
 
 .menu-anchor {
-  color: $menu-white;
+  color: $light-gray;
+}
+
+.icon-lg {
+  font-size: 1.4em;
+}
+
+#burger {
+  font-size: 1.5em;
+  margin-top: -15px;
+}
+
+
+// MEDICA QUERIES //
+
+// MEDIUM SCREEN MEDIA QUERY FOR TOPBAR AND FOOTER
+@media(max-width: 768px){
+  .off-canvas-content {
+    min-height: 80vh;
+  }
+  .sticky-footer {
+    border-top: 1px solid $light-gray;
+    position: absolute;
+    padding: 8px;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    max-height: 70px;
+  }
+  .footer-icon {
+    margin-left: 47%;
+    padding-top: -40px;
+    color: $white;
+    font-size: 1.8em;
+  }
+
+  .title-bar {
+    position: relative;
+    min-width: 100%;
+  }
+
+}
+
+// SMALL SCREEN MEDIA QUERY FOR TOPBAR AND FOOTER
+@media(max-width: 639px){
+  .off-canvas-content {
+    min-height: 80vh;
+  }
+  .sticky-footer {
+    border-top: 1px solid $light-gray;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+  }
+  .footer-icon {
+    margin-left: 47%;
+    padding-top: -40px;
+    color: $white;
+    font-size: 1.6em;
+  }
+
+  .title-bar {
+    height: 50px;
+    padding-top: -5px;
+  }
+
 }

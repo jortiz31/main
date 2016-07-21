@@ -4,7 +4,8 @@
     "angular-route": "latest",
     "angular-resource": "latest",
     "angular": "~> 1.5",
-    "ionicons": "latest"
+    "ionicons": "latest",
+    "angular-animate": "latest"
   },
   "resolutions": {
     "angular": "1.5"

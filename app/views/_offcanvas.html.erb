@@ -2,22 +2,30 @@
   <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
     <!-- off-canvas title bar for 'small' screen -->
-    <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
+    <div class="title-bar clearfix" data-responsive-toggle="widemenu" data-hide-for="medium">
       <div class="title-bar-right">
-        <span class="menu-title">jonathanOrtiz</span>
-        <button class="menu-icon" type="button" data-open="offCanvasRight"></button>
+        <a href="#/" class="brand-text">Jonathan Ortiz</a>
+        <i class="ion-drag" id="burger" type="button" data-open="offCanvasRight" ></i>
       </div>
     </div>
 
-    <!-- off-canvas right menu -->
     <div class="off-canvas position-right" id="offCanvasRight" data-off-canvas data-position="right">
-      <ul class="vertical dropdown menu" data-dropdown-menu>
-        <li><a href="#/">Home</a></li>
-        <li><a href="#/about">About</a></li>
-        <li><a href="#/portfolio">Work</a></li>
-        <li><a href="#/contact">Contact</a></li>
-      </ul>
-    </div>
+
+        <!-- Close button -->
+        <button class="close-button" aria-label="Close menu" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <!-- Menu -->
+        <ul class="vertical menu vert-menu">
+          <li><a href="#/" data-close>Home</a></li>
+          <li><a href="#/about" data-close>About</a></li>
+          <li><a href="#/portfolio" data-close>Work</a></li>
+          <li><a href="#/contact" data-close>Contactz</a></li>
+        </ul>
+
+      </div>
+
 
     <!-- "wider" top-bar menu for 'medium' and up -->
     <div id="widemenu" class="top-bar">
@@ -27,10 +35,10 @@
       </div>
       <div class="top-bar-right">
         <ul class="menu submenu" data-submenu>
-          <li><a href="#/" class="menu-anchor">Home</a></li>
-          <li><a href="#/about" class="menu-anchor">About</a></li>
-          <li><a href="#/portfolio" class="menu-anchor">Work</a></li>
-          <li><a href="#/contact" class="menu-anchor">Contact</a></li>
+          <li><a href="#/" class="menu-anchor"><i class="fi-home icon-lg"></i></a></li>
+          <li><a href="#/about" class="menu-anchor"><i class="fi-torso icon-lg"></i></a></li>
+          <li><a href="#/portfolio" class="menu-anchor"><i class="fi-bookmark icon-lg"></i></a></li>
+          <li><a href="#/contact" class="menu-anchor"><i class="fi-mail icon-lg"></i></a></li>
         </ul>
       </div>
     </div>
@@ -38,8 +46,16 @@
     <!-- original content goes in this container -->
     <div class="off-canvas-content" data-off-canvas-content>
       <%= yield %>
+      <%= render partial: "./footer" %>
     </div>
 
     <!-- close wrapper, no more content after this -->
   </div>
 </div>
+
+<script>
+  $("#burger").on("click",function(){
+    console.log("clicked menu button")
+    $(this).toggleClass("ion-android-close");
+  });
+</script>
