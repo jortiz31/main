@@ -1,15 +1,16 @@
 <div ng-controller="ProjectSearchController">
 
   <div class="row align-center">
-    <div class="medium-10 columns">
+    <div class="medium-7 columns">
       <header>
-        <h4 class="text-center">Filter</h4>
+        <h3 class="text-center">Filter</h3>
+        <hr>
       </header>
     </div>
   </div>
 
   <div class="row align-center">
-    <div class="medium-10 columns">
+    <div class="medium-7 columns">
       <form>
         <div class="input-group">
           <label for="keywords" class="input-group-label">keywords</label>
@@ -25,7 +26,7 @@
   </div>
 
   <div class="row align-center" ng-if="projects.length > 3">
-    <div class="medium-10 columns">
+    <div class="medium-7 columns">
       <ul class="pagination text-center" role="navigation" aria-label="Pagination">
         <li class="pagination-previous <%= page == 0 ? 'disabled' : '' %> ">
           <a href="" ng-click="previousPage()">Previous</a>
@@ -37,18 +38,23 @@
     </div>
   </div>
 
-  <div class="row align-center">
-    <div class="medium-5 columns">
-      <div ng-repeat="project in projects">
-        <ul class="pricing-table no-bullet text-center">
-          <li class="title">{{project.name}}</li>
-          <li class="description">{{project.description}}</li>
-          <li class="technologies">{{project.technologies}}</li>
-          <li>{{project.url}}</li>
-          <li><a class="button" ng-click="viewDetails(project)">Details</a></li>
-        </ul>
+
+  <div class="row align-center margin">
+    <div class="medium-7 columns">
+      <div class="card clearfix" ng-repeat="project in projects">
+        <img src="{{project.img_url}}" class="projImg">
+        <span class="title">{{project.name}}</span>
+        <p>{{project.description}}</p>
+        <a class="button" ng-click="viewDetails(project)">Details</a>
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
 
 </div>

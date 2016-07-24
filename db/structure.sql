@@ -74,7 +74,8 @@ CREATE TABLE projects (
     technologies character varying NOT NULL,
     url character varying NOT NULL,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    img_url character varying
 );
 
 
@@ -240,4 +241,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160714211335');
 INSERT INTO schema_migrations (version) VALUES ('20160714215836');
 
 INSERT INTO schema_migrations (version) VALUES ('20160714223251');
+
+INSERT INTO schema_migrations (version) VALUES ('20160721172208');
 

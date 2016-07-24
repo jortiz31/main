@@ -71,7 +71,8 @@ $global-weight-bold: bold;
 $global-radius: 0;
 $global-text-direction: ltr;
 $default-border: #ECF0F1;
-$top-menu: #34495e;
+$top-menu: #ecf0f1;
+$green-sea: #16a085;
 
 // 2. Breakpoints
 // --------------
@@ -137,8 +138,8 @@ $code-font-weight: $global-weight-normal;
 $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
-$anchor-color: $light-gray;
-$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-color: #2c3e50;
+$anchor-color-hover: scale-color($green-sea, $lightness: -34%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
@@ -523,10 +524,10 @@ $thumbnail-radius: $global-radius;
 // -------------
 
 $titlebar-background: $top-menu;
-$titlebar-color: $white;
+$titlebar-color: #34495e;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
-$titlebar-icon-color: $white;
+$titlebar-icon-color: #34495e;
 $titlebar-icon-color-hover: $medium-gray;
 $titlebar-icon-spacing: 0.25rem;
 
@@ -548,6 +549,6 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $white;
+$topbar-background: $top-menu;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;

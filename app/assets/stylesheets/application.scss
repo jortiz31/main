@@ -25,152 +25,111 @@
 
  // GLOBALS
 $main-bg-image: linear-gradient(rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.61)), url(images/mainbg.jpg);
-$menu-color: #0EBB9F;
 $asbestos: #7f8c8d;
 $midnight-blue: #34495e;
 
 .off-canvas-content {
-  height: 93vh;
-}
-
-// FOOTER STYLE
-.sticky-footer {
-  border-top: 1px solid $light-gray;
-  position: absolute;
-  padding: 10px;
-  left: 0;
-  bottom: 0;
-  min-width: 100%;
-  max-height: 10vh;
-  background-color: $white;
-}
-
-.footer-icon {
-  color: $midnight-blue;
-  font-size: 1.8em;
-}
-.footer-menu {
-  margin: 0;
-  padding-right: 0;
-  li {
-  display: inline-block;
-  min-width: 30%;
-  list-style: none;
-  text-align: center;
-  margin: 0;
-  }
-}
-
-// OFF CANVAS VERTICAL MENU
-.is-open {
   min-height: 100vh;
 }
-.vert-menu {
-  li a {
-    display: block;
-    color: $top-menu;
-    min-height: 20vh;
-    font-size: 3em;
-    text-align: center;
-    padding: 45px 0 0 0;
-  }
-  li:hover {
-    background-color: $asbestos;
-  }
-  li a:hover {
-    color: $white;
-  }
+
+// RESPONSIVE NAVBAR STYLES (SMALL SCREEN NAV)
+.nav-icon {
+  font-size: 1.6em;
+  padding: 0;
+  margin: 4px 0 0 10px;
 }
 
-
-// MENU STYLES //
-.brand-text {
-  font-family: $brand-font-family;
-  position: absolute;
-  left: 0;
-  padding: 5px 0 0 7px;
-}
-
-.menu-text {
-  color: $light-gray;
-  font-size: 1.2em;
-  padding-bottom: 3px;
-}
-
-.menu-text::after {
-  color: #C43829;
-}
-
-.menu-anchor {
-  color: $light-gray;
-}
-
-.icon-lg {
-  font-size: 1.4em;
-  color: $midnight-blue;
-}
-
-#burger {
+.nav-title {
   font-size: 1.5em;
-  margin-top: -15px;
 }
 
 
-// MEDICA QUERIES //
 
-// MEDIUM SCREEN MEDIA QUERY FOR TOPBAR AND FOOTER
+.menu a:hover {
+  border-bottom: 1px solid $green-sea;
+  border-top: 1px solid $green-sea;
+}
+
+// PROJECT DETAIL STYLE
+.callout  {
+
+  border: 2px solid $light-gray;
+  border-radius: 3px;
+
+  .callout-header {
+    background-color: $black;
+    color: $light-gray;
+  }
+
+  .thumbnail {
+    border: none;
+  }
+
+  .project-img {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+}
+
+ // CSS FOR CARD
+.card {
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  color: #272727;
+  border-radius: 2px;
+
+  .title {
+    line-height: 3rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  .action {
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 1.3rem;
+  }
+  a {
+    margin-right: 1.3rem;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 150px;
+    min-height: 150px;
+  }
+
+}
+
+// MEDICA QUERIES
+// MEDIUM SCREEN
 @media(max-width: 768px){
-  .off-canvas-content {
-    min-height: 80vh;
-  }
-  .sticky-footer {
-    padding: 8px;
-  }
-
-  .title-bar {
-    position: relative;
-    min-width: 100%;
-  }
 
 }
 
-// SMALL SCREEN MEDIA QUERY FOR TOPBAR AND FOOTER
+// SMALL SCREEN
 @media(max-width: 639px){
-  .off-canvas-content {
-    height: 93.4vh;
-  }
   .title-bar {
-    height: 50px;
+    min-height: 50px;
   }
   .top-bar {
-    padding-top: 8px;
+    display: none;
   }
-
 }
 
 @media only screen
 and (min-device-width : 414px)
 and (max-device-width : 736px)
 and (orientation : landscape) {
-  .off-canvas-content {
-    min-height: 100vh;
-  }
-  .footer-icon {
-    font-size: 1.3em;
-  }
+
 }
 
 @media only screen
 and (min-device-width : 568px)
 and (max-device-width : 320px)
 and (orientation : landscape) {
-  .off-canvas-content {
-    height: 100vh;
-  }
-  .footer-icon {
-    font-size: 1.1em;
-  }
-  .top-bar {
-    padding-bottom: 10px;
-  }
+
 }

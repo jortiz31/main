@@ -14,7 +14,7 @@ app.config(['$routeProvider',
       }).when('/contact', {
         templateUrl: 'contact.html',
         controller: 'ContactController'
-      }).when('/projects-search', {
+      }).when('/search', {
         templateUrl: 'project_search.html',
         controller: 'ProjectSearchController'
       }).when('/:id', {

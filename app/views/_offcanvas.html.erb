@@ -1,62 +1,24 @@
-<div class="off-canvas-wrapper">
   <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
 
-    <!-- off-canvas title bar for 'small' screen -->
-    <div class="title-bar clearfix" data-responsive-toggle="widemenu" data-hide-for="medium">
-      <div class="title-bar-right">
-        <a href="#/" class="brand-text">Jonathan Ortiz</a>
-        <i class="ion-drag" id="burger" type="button" data-open="offCanvasRight" ></i>
+          <!-- Close button -->
+          <button class="close-button" aria-label="Close menu" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+          <!-- Menu -->
+          <ul class="vertical menu offcan-menu">
+            <li><a href="#/" data-close>Home</a></li>
+            <li><a href="#/about" data-close>About</a></li>
+            <li><a href="#/contact" data-close>Contact</a></li>
+            <li><a href="#/projects" data-close>Projects</a></li>
+          </ul>
+
+        </div>
+
+        <div class="off-canvas-content" data-off-canvas-content>
+          <!-- Page content -->
+          <%= render partial: './nav' %>
+          <%= yield %>
+        </div>
       </div>
-    </div>
-
-    <div class="off-canvas position-right" id="offCanvasRight" data-off-canvas data-position="right">
-
-        <!-- Close button -->
-        <button class="close-button" aria-label="Close menu" type="button" data-close>
-          <span aria-hidden="true">&times;</span>
-        </button>
-
-        <!-- Menu -->
-        <ul class="vertical menu vert-menu">
-          <li><a href="#/" data-close><i class="fi-home icon-vert"></i></a></li>
-          <li><a href="#/about" data-close><i class="fi-torso icon-vert"></i></a></li>
-          <li><a href="#/projects" data-close><i class="fi-bookmark icon-vert"></i></a></li>
-          <li><a href="#/contact" data-close><i class="fi-mail icon-vert"></i></a></li>
-          <li><a href="#/projects-search" data-close><i class="ion-search icon-vert"></i></a></li>
-        </ul>
-      </div>
-
-
-    <!-- "wider" top-bar menu for 'medium' and up -->
-    <div id="widemenu" class="top-bar">
-      <div class="top-bar-left">
-        <ul class="dropdown menu" data-dropdown-menu>
-          <li class="menu-text">JOrtiz</li>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu submenu" data-submenu>
-          <li><a href="#/" class="menu-anchor"><i class="fi-home icon-lg"></i></a></li>
-          <li><a href="#/about" class="menu-anchor"><i class="fi-torso icon-lg"></i></a></li>
-          <li><a href="#/projects" class="menu-anchor"><i class="fi-bookmark icon-lg"></i></a></li>
-          <li><a href="#/contact" class="menu-anchor"><i class="fi-mail icon-lg"></i></a></li>
-          <li><a href="#/projects-search" class="menu-anchor"><i class="ion-search icon-lg"></i></a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- original content goes in this container -->
-    <div class="off-canvas-content" data-off-canvas-content>
-      <%= yield %>
-      <%= render partial: "./footer" %>
-    </div>
-
-    <!-- close wrapper, no more content after this -->
-  </div>
-</div>
-
-<script>
-  $("#burger").on("click",function(){
-    console.log("clicked menu button")
-    $(this).toggleClass("ion-android-close");
-  });
-</script>

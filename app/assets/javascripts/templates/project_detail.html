@@ -1,10 +1,30 @@
-<div class="row align-center">
-  <div class="medium-8 columns">
-    {{project.id}}
-    {{project.name}}
-    {{project.description}}
-    {{project.technologies}}
-    {{project.url}}
-    <a href="#/projects-search" class="button expanded small">Back</a>
+
+
+
+<div class="callout project-card clearfix">
+  <div class="row">
+    <div class="medium-12 columns">
+      <h3 class="text-center">{{project.name.toUpperCase()}}</h3>
+    </div>
+  </div>
+
+  <div class="row align-middle">
+    <div class="columns">
+      <h3 class="">Description</h3>
+      <h5><strong>{{project.description.toUpperCase()}}</strong></h5>
+      <h3 class="">Frameworks/Technologies</h3>
+      <h5 class="text-justify"><strong>{{project.technologies}}</strong></h5>
+      <div class="expanded button-group">
+        <a href="#/search" class="button large"><i class="ion-arrow-left-c"></i></a>
+        <a href="{{project.url}}" class="button large"><i class="fi-link"></i></a>
+        <a href="#" class="button large"><i class="ion-android-share"></i></a>
+      </div>
+    </div>
+
+
+    <div class="columns">
+      <img src="{{project.img_url}}" class="project-img float-right" alt="{{project.name}} img" />
+    </div>
+
   </div>
 </div>
