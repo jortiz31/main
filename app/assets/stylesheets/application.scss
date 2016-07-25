@@ -23,13 +23,42 @@
  }
 
 
- // GLOBALS
-$main-bg-image: linear-gradient(rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.61)), url(images/mainbg.jpg);
+// COLOR PALATTE ONLY USES THESE COLORS!!
+$shellblue: #41AAC4;
+$jadegreen: #80CEB9;
+$sandalwood: #BDB69C;
+$flatgrey: #DDDDDD;
+$taupe: #717D8C;
+$light-black: #2F343A;
+
 $asbestos: #7f8c8d;
 $midnight-blue: #34495e;
+$round-btn-radius: 18px;
+
 
 .off-canvas-content {
   min-height: 100vh;
+
+}
+.flex-wrapper {
+  height: 93.3vh;
+}
+
+.main-icon {
+  font-size: 2.5em;
+}
+
+.main-icon:hover {
+  color: $light-gray;
+}
+.ion-social-github {
+  color: black;
+}
+.ion-social-linkedin {
+  color: #2980b9;
+}
+.ion-social-instagram {
+  color: $light-black;
 }
 
 // RESPONSIVE NAVBAR STYLES (SMALL SCREEN NAV)
@@ -37,17 +66,25 @@ $midnight-blue: #34495e;
   font-size: 1.6em;
   padding: 0;
   margin: 4px 0 0 10px;
+  cursor: pointer;
+  color: $light-gray;
+}
+
+.nav-icon:hover {
+  color: $light-black;
 }
 
 .nav-title {
   font-size: 1.5em;
 }
 
+.radius {
+  border-radius: $round-btn-radius;
+}
 
 
-.menu a:hover {
-  border-bottom: 1px solid $green-sea;
-  border-top: 1px solid $green-sea;
+.nav-menu a:hover {
+  border-bottom: 3px solid scale-color($flatgrey, $lightness: -34%);
 }
 
 // PROJECT DETAIL STYLE
@@ -102,6 +139,20 @@ $midnight-blue: #34495e;
     min-height: 150px;
   }
 
+}
+
+.projImg {
+  max-height: 200px;
+  max-width: 250px;
+}
+
+.project-card {
+  border: 1px solid $green-sea;
+}
+
+.miniImg {
+  width: 80px;
+  height: 80px;
 }
 
 // MEDICA QUERIES

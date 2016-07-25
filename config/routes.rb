@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root  'projects#home'
+  root  'site#index'
+
   resources :projects, only: [:index, :show]
-  get '*path', to: 'projects#home'
+  get '*path', to: 'site#index'
 end

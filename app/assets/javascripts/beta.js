@@ -1,4 +1,4 @@
-var app = angular.module('iceberg', ['ngRoute', 'templates', 'ngAnimate']);
+var app = angular.module("myApp", ['ngRoute', 'templates', 'ngAnimate']);
 
 app.config(['$routeProvider',
     function($routeProvider) {
@@ -29,7 +29,7 @@ app.animation('.slide', [function() {
     // make note that other events (like addClass/removeClass)
     // have different function input parameters
     enter: function(element, doneFn) {
-      jQuery(element).fadeIn(1000, doneFn);
+      jQuery(element).fadeIn(1500, doneFn);
 
       // remember to call doneFn so that angular
       // knows that the animation has concluded
@@ -63,15 +63,36 @@ app.controller("AboutController",[
 app.controller("ProjectsController",[
         "$scope", "$http", "$location",
     function($scope, $http, $location){
-      $scope.projects = [];
-      $http.get("/projects.json"
-      ).then(function(response){
-        $scope.all_projects = response.data;
-      }, function(response){
-          console.log('there was an error: ' + response.data);
+      $scope.projects = [
+        {
+          "name": "down2golf",
+          "description": "social golfing app with messaging and google map/weather api",
+          "technologies": "ruby on rails, foundation 6",
+          "img_url": "http://the1perspective.com/jonatron/DOWN2GOLF.png",
+          "id": 3
+        },
+        {
+          "name": "surftubev2",
+          "description": "you tube api built with react",
+          "technologies": "react, foundation 6",
+          "img_url": "http://the1perspective.com/jonatron/DOWN2GOLF.png",
+          "id": 4
+        },
+        {
+          "name": "at some point",
+          "description": "todo app with google map api",
+          "technologies": "ruby on rails, bootstrap frameworkd",
+          "img_url": "http://the1perspective.com/jonatron/DOWN2GOLF.png",
+          "id": 2
+        },
+        {
+          "name": "my portfolio page",
+          "description": "basic page about me and my work",
+          "technologies": "AngularJS, PostgreSQL, Ruby on Rails, Foundation 6",
+          "img_url": "http://the1perspective.com/jonatron/DOWN2GOLF.png",
+          "id": 1
         }
-      );
-      console.log($scope.projects);
+      ];
     }
 ]);
 

@@ -40,8 +40,7 @@
 //  35. Top Bar
 
 @import 'util/util';
-@import url(https://fonts.googleapis.com/css?family=Marvel:400,700);
-@import url(https://fonts.googleapis.com/css?family=Yellowtail);
+@import 'https://fonts.googleapis.com/css?family=Lato';
 
 // 1. Global
 // ---------
@@ -61,7 +60,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Marvel', Marvel, Roboto, Arial, sans-serif;
+$body-font-family: 'Lato', Lato, Roboto, Arial, sans-serif;
 $brand-font-family: 'Yellowtail', cursive;
 $body-antialiased: true;
 $global-margin: 1rem;
@@ -73,6 +72,14 @@ $global-text-direction: ltr;
 $default-border: #ECF0F1;
 $top-menu: #ecf0f1;
 $green-sea: #16a085;
+
+// COLOR PALATTE
+$shellblue: #41AAC4;
+$jadegreen: #80CEB9;
+$sandalwood: #BDB69C;
+$flatgrey: #DDDDDD;
+$taupe: #717D8C;
+$light-black: #2F343A;
 
 // 2. Breakpoints
 // --------------
@@ -138,8 +145,8 @@ $code-font-weight: $global-weight-normal;
 $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
-$anchor-color: #2c3e50;
-$anchor-color-hover: scale-color($green-sea, $lightness: -34%);
+$anchor-color: $flatgrey;
+$anchor-color-hover: scale-color($flatgrey, $lightness: -34%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
@@ -523,7 +530,7 @@ $thumbnail-radius: $global-radius;
 // 33. Title Bar
 // -------------
 
-$titlebar-background: $top-menu;
+$titlebar-background: $taupe;
 $titlebar-color: #34495e;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
@@ -549,6 +556,6 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $top-menu;
+$topbar-background: $taupe;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;

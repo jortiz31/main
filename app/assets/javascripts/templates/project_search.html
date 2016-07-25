@@ -38,23 +38,29 @@
     </div>
   </div>
 
+  <div class="row align-center">
+    <div class="medium-8 columns">
+      <div ng-repeat="project in projects">
+        <div class="row align-middle project-card clearfix" data-closable="slide-out-right">
+          <div class="columns show-for-small-only">
+            <img src="{{project.img_url}}" alt="{{project.name}} img" class="miniImg float-center" />
+          </div>
 
-  <div class="row align-center margin">
-    <div class="medium-7 columns">
-      <div class="card clearfix" ng-repeat="project in projects">
-        <img src="{{project.img_url}}" class="projImg">
-        <span class="title">{{project.name}}</span>
-        <p>{{project.description}}</p>
-        <a class="button" ng-click="viewDetails(project)">Details</a>
+            <div class="medium-6 small-12 columns">
+              {{project.name}}
+              <h6>{{project.description}}</h6>
+              <h6>{{project.technologies}}</h6>
+              <a class="button show-for-medium" ng-click="viewDetails(project)">Details</a>
+              <a class="button expanded show-for-small-only" ng-click="viewDetails(project)">Details</a>
+            </div>
+
+            <div class="medium-6 columns show-for-medium">
+              <img src="{{project.img_url}}" alt="{{project.name}} img" class="projImg float-right" />
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-
-
-
-
-
-
 
 </div>

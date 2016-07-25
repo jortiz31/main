@@ -1,9 +1,5 @@
 class ProjectsController < ApplicationController
-
-  def home
-  end
-
-  PAGE_SIZE = 10
+  PAGE_SIZE = 2
   def index
     @projects = Project.all.limit(10)
     @page = (params[:page] || 0).to_i
@@ -31,4 +27,5 @@ class ProjectsController < ApplicationController
       format.json {render json: project}
     end
   end
+
 end
